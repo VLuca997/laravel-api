@@ -10,8 +10,8 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        $projects = Project::all();
-        // $projects = Project::paginate(5);
+        // $projects = Project::all();
+        $projects = Project::paginate(2);
         return response()->json(['success' => true,'results' => $projects]);
     }
     public function show(String $title)

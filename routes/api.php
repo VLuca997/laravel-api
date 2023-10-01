@@ -20,8 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 route::name('api.')->group(function (){
-    Route::name('posts')->prefix('posts')->group(function(){
+    Route::name('projects')->prefix('projects')->group(function(){
         Route::get('/', [ProjectController::class, 'index'])->name('index');
-        Route::get('/{posts}', [ProjectController::class, 'show'])->name('show');
+        Route::get('/{projects}', [ProjectController::class, 'show'])->name('show');
     });
 });
